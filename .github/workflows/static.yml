@@ -2,15 +2,11 @@ name: Deploy static content to Pages
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+    branches:
+      - main
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -20,7 +16,7 @@ jobs:
     - name: Build and deploy
       run: |
         mkdir -p build
-        rsync -av --exclude='build' . build
+        cp -r * build
         cd build
         echo 'pb38550.github.io' > CNAME
 
