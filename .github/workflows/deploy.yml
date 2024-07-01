@@ -25,6 +25,8 @@ jobs:
         uses: actions/checkout@v4  # Mise à jour vers v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: Display Node.js version
+        run: node -v  # Cette étape affiche la version de Node.js utilisée
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
