@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan de Construction d'un Site Web</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <header>
+        <h1>Plan de Construction d'un Site Web</h1>
+    </header>
+    <div class="container">
+        <nav class="sidebar">
+            <ul>
+                <li><a href="../../index.html">Accueil</a></li>
+                <li><a href="../index.html">Technologie</a></li>
+                <li><a href="../../categories/art/index.html">Art</a></li>
+            </ul>
+        </nav>
+        <main class="content">
+            <article>
+                <h2>Pré-requis</h2>
+                <ul>
+                    <li>Avoir un compte GitHub.</li>
+                    <li>Installer Git sur votre machine.</li>
+                    <li>Installer Visual Studio Code (VS Code).</li>
+                </ul>
+
+                <h2>Création du dépôt GitHub</h2>
+                <ol>
+                    <li><strong>Créer un nouveau dépôt sur GitHub :</strong>
+                        <ul>
+                            <li>Connectez-vous à GitHub et créez un nouveau dépôt.</li>
+                            <li>Nommer le dépôt, par exemple, <code>mon-site-web</code>.</li>
+                            <li>Choisir de ne pas initialiser le dépôt avec un README pour commencer avec un dépôt vide.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Cloner le dépôt sur votre machine locale :</strong>
+                        <pre><code>git clone https://github.com/&lt;votre-utilisateur&gt;/mon-site-web.git</code></pre>
+                    </li>
+                    <li><strong>Naviguer vers le répertoire cloné :</strong>
+                        <pre><code>cd mon-site-web</code></pre>
+                    </li>
+                </ol>
+
+                <h2>Configuration du projet local</h2>
+                <ol>
+                    <li><strong>Ouvrir le projet dans VS Code :</strong>
+                        <ul>
+                            <li>Ouvrir Visual Studio Code.</li>
+                            <li>Cliquer sur <code>File &gt; Open Folder...</code> et sélectionner le dossier <code>mon-site-web</code>.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Créer la structure des fichiers :</strong>
+                        <pre><code>.
+mon-site-web/
+├── index.html
+├── styles.css
+├── categories/
+│   ├── technologie/
+│   │   ├── index.html
+│   │   ├── article-template.html
+│   │   └── article1.html
+│   └── art/
+│       └── index.html
+                        </code></pre>
+                    </li>
+                    <li><strong>Ajouter du contenu initial :</strong>
+                        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Mon Site Web&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Bienvenue sur Mon Site Web&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;div class="container"&gt;
+        &lt;nav class="sidebar"&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Accueil&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="categories/technologie/index.html"&gt;Technologie&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="categories/art/index.html"&gt;Art&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+        &lt;main class="content"&gt;
+            &lt;article&gt;
+                &lt;h2&gt;Introduction&lt;/h2&gt;
+                &lt;p&gt;Ceci est un exemple de contenu pour la page d'accueil.&lt;/p&gt;
+            &lt;/article&gt;
+        &lt;/main&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                        </code></pre>
+                    </li>
+                </ol>
+
+                <h2>Gestion des versions et déploiement</h2>
+                <ol>
+                    <li><strong>Utiliser le terminal intégré de VS Code pour les commandes Git :</strong>
+                        <pre><code>View &gt; Terminal</code></pre>
+                    </li>
+                    <li><strong>Ajouter les fichiers au suivi de Git :</strong>
+                        <pre><code>git add .</code></pre>
+                    </li>
+                    <li><strong>Committer les modifications :</strong>
+                        <pre><code>git commit -m "Initial commit with project structure and basic content"</code></pre>
+                    </li>
+                    <li><strong>Pousser les modifications vers GitHub :</strong>
+                        <pre><code>git push origin main</code></pre>
+                    </li>
+                </ol>
+
+                <h2>Configuration de GitHub Pages</h2>
+                <ol>
+                    <li><strong>Activer GitHub Pages dans les paramètres du dépôt :</strong>
+                        <ul>
+                            <li>Aller dans les <code>Settings</code> de votre dépôt sur GitHub.</li>
+                            <li>Dans la section <code>Pages</code>, sélectionner la branche <code>main</code> et le dossier racine (<code>/root</code>) comme source.</li>
+                            <li>Enregistrer les modifications.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Accéder à votre site :</strong>
+                        <ul>
+                            <li>Après quelques minutes, votre site sera disponible à l'adresse <code>https://&lt;votre-utilisateur&gt;.github.io/mon-site-web</code>.</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <h2>Ajouter de nouveaux articles</h2>
+                <ol>
+                    <li><strong>Dupliquer <code>article-template.html</code> pour créer un nouvel article :</strong>
+                        <pre><code>cp categories/technologie/article-template.html categories/technologie/article2.html</code></pre>
+                    </li>
+                    <li><strong>Modifier le nouvel article :</strong>
+                        <ul>
+                            <li>Ouvrir et modifier <code>article2.html</code> dans VS Code pour ajouter le contenu réel.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Mettre à jour <code>index.html</code> de la catégorie :</strong>
+                        <ul>
+                            <li>Ajouter un lien vers le nouvel article dans <code>categories/technologie/index.html</code>.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Ajouter, committer et pousser les modifications :</strong>
+                        <pre><code>git add .
+git commit -m "Ajout de l'article technologie 2"
+git push origin main</code></pre>
+                    </li>
+                </ol>
+            </article>
+        </main>
+    </div>
+</body>
+</html>
