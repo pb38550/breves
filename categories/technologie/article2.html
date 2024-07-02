@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sauvegarde base de données Mysql et site indexhibit</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <header>
+        <h1>{{titre}}</h1>
+    </header>
+    <div class="container">
+        <nav class="sidebar">
+            <ul>
+                <li><a href="../../index.html">Accueil</a></li>
+                <li><a href="../index.html">Technologie</a></li>
+                <li><a href="../../categories/art/index.html">Art</a></li>
+            </ul>
+        </nav>
+        <main class="content">
+            <article>
+                <h2>Sauvegarde de la base de données Mysql d'un site indexhibit</h2>
+                <p>ouvrir un terminal Utiliser sudo tee pour rediriger la sortie avec les permissions root: 
+                    sudo mysqldump -u "username" -p "nomdelabasededonnees par exemple : indexhibit2_db " | sudo tee /var/www/sauvegarde_indexhibit2_db_$(date +%Y%m%d_%H%M%S).sql > /dev/null
+                </p>
+                <h2> création de l'archive :</h2>
+                <p>cd /var/www
+                    sudo tar -czvf sauvegarde_site_indexhibit_$(date +%Y%m%d_%H%M%S).tar.gz carnet
+                <h2> vérifier les sauvegardes</h2>
+                <p> ls -lh /var/www/sauvegarde_site_indexhibit_*.tar.gz
+                </p>
+                
+            </article>
+        </main>
+    </div>
+</body>
+</html>
